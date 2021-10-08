@@ -12,6 +12,18 @@ namespace WebStore
     [Route("api/webstore")]
     public class WebStoreController : ControllerBase
     {
-        
+        private IWebStoreRepository _repository;
+
+        public WebStoreController(IWebStoreRepository repository)
+        {
+            _repository = repository;
+        }
+        [HttpGet] //"api/products"
+
+        public async Task<IActionResult> GetAll()
+        {
+            var products = await _repository.GetStoreInventoryAsync();
+            return Ok(products);
+        }
     }
 }

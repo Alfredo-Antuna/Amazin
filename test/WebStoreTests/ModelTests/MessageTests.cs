@@ -14,8 +14,7 @@ namespace test
             user1.Username = "Bruce Lee";
             User user2 = new User();
             user2.Username = "Bruce Willis";
-            MessageDto testMessageDto = new() { Text = "Hi", FromUser = user1, ToUser = user2 };
-            Message testMessage = new(testMessageDto);
+            Message testMessage = new() { Id = new Guid(), FromUser = user1, ToUser = user2, Text = "Hi" };
             testMessage.Text.Should().Be("Hi");
             testMessage.FromUser.Username.Should().Be("Bruce Lee");
             testMessage.ToUser.Username.Should().Be("Bruce Willis");

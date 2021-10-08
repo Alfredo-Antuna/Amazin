@@ -16,11 +16,14 @@ namespace WebStore
         [InverseProperty("ToUser")]
         public List<Message> ReceivedMessages { get; set; } = new();
 
-        public User() {  Id = new Guid();}
-
-        public User(UserDto userDto): this()
+        public User()
         {
-          
+            Id = new Guid();
+        }
+
+        public User(UserDto userDto) : this()
+        {
+
             Username = userDto.Username;
         }
     }

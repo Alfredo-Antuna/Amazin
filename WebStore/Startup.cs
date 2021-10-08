@@ -27,7 +27,9 @@ namespace WebStore
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-             services.AddDbContext<Database>(options => options.UseSqlite(Configuration.GetConnectionString("Default")));
+            services.AddDbContext<Database>(options => options.UseSqlite(Configuration.GetConnectionString("Default")));
+            services.AddScoped<IWebStoreRepository, WebStoreRepository>();
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

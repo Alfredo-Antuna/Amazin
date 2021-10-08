@@ -15,10 +15,10 @@ namespace test
             user1.Username = "Bruce Lee";
             User user2 = new User();
             user2.Username = "Bruce Willis";
-            MessageDto testMessageDto = new() { Text = "Hi", FromUser = user1, ToUser = user2 };
+            MessageDto testMessageDto = new() { Text = "Hi", FromUser = user1.Id, ToUser = user2.Id };
             testMessageDto.Text.Should().Be("Hi");
-            testMessageDto.FromUser.Username.Should().Be("Bruce Lee");
-            testMessageDto.ToUser.Username.Should().Be("Bruce Willis");
+            testMessageDto.FromUser.Should().Be(user1.Id);
+            testMessageDto.ToUser.Should().Be(user2.Id);
         }
     }
 }
