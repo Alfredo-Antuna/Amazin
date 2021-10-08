@@ -8,8 +8,8 @@ namespace WebStore
         [Required]
         public string Text { get; set; }
         [Required]
-        public User FromUser { get; set; }
+        public Guid FromUser { get; set; }
         [Required]
-        public User ToUser { get; set; }
+        public Guid ToUser { get; set; }
     }
 }

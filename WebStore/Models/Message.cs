@@ -15,8 +15,6 @@ namespace WebStore
         public Message(MessageDto messageDto)
         {
             Text = messageDto.Text;
-            FromUser = messageDto.FromUser;
-            ToUser = messageDto.ToUser;
         }
     }
 }
