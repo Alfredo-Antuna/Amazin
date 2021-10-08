@@ -21,7 +21,7 @@ namespace WebStore
         public User(UserDto userDto): this()
         {
           
-            Username = userDto.UserName;
+            Username = userDto.Username;
         }
     }
 }
